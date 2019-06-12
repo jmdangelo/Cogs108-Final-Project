@@ -2,16 +2,9 @@
 
 import pandas
 df = pandas.read_csv('new.csv')
-#list(df)
-
 
 #drops all the rows with non CA states
 df2 = df.ix[~(df['State'] != 'CA')]
-
-#df3= df2[['State']]
-#print(df3)
-#result = df2[['ZIP code']].contains(pat = 'XXX')
-
 
 #drops all rows with missing zip codes
 df2 = df2.dropna(subset=['ZIP code'])
